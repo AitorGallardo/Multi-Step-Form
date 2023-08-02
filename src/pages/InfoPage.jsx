@@ -19,19 +19,19 @@ export const InfoPage = () => {
           <label className='input__label text-xs' htmlFor={'name'}>
             Name
           </label>
-          <input className='border py-1 px-2 border-solid rounded-lg outline-0 hover:border-black focus:border-black cursor-pointer' type='text' id='name' name='name' />
+          <input className='border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer' type='text' id='name' name='name' />
         </fieldset>
         <fieldset className='flex flex-col gap-2'>
           <label className='input__label text-xs' htmlFor={'email'}>
             Email Address
           </label>
-          <input className='border py-1 px-2 border-solid rounded-lg outline-0 hover:border-black focus:border-black cursor-pointer' type='email' id='email' name='email' />
+          <input className='border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer' type='email' id='email' name='email' />
         </fieldset>
         <fieldset className='flex flex-col gap-2'>
           <label className='input__label text-xs' htmlFor={'phone'}>
             Phone Number
           </label>
-          <input className='border py-1 px-2 border-solid rounded-lg outline-0 hover:border-black focus:border-black cursor-pointer' type='text' id='phone' name='phone' />
+          <input className='border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer' type='text' id='phone' name='phone' />
         </fieldset>
 
       </form>

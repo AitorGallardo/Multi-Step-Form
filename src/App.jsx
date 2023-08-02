@@ -1,10 +1,12 @@
+import { Stepper } from './components/Stepper'
 import { InfoPage } from './pages/InfoPage'
 
 function App() {
 
   return (
-    <div className='flex h-screen justify-center items-center bg-[#f0f6ff]'>
+    <div className='flex h-screen justify-center items-center bg-magnolia'>
       <InfoPage></InfoPage>
+      {/* <Stepper/> */}
     </div>
   )
 }
