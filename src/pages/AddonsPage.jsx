@@ -10,17 +10,17 @@ const pageData = {
 };
 
 export const AddonsPage = () => {
-    const [timeType, setTimeType] = useState(TIME_TYPES.MONTHLY)
+  const [timeType, setTimeType] = useState(TIME_TYPES.MONTHLY);
 
-    const handleChecked = (value) => {
-        console.log('value',value);
-        const timeType = value ? TIME_TYPES.YEARLY : TIME_TYPES.MONTHLY
-        setTimeType(timeType)
-}
-    
+  const handleChecked = (value) => {
+    console.log('value', value);
+    const timeType = value ? TIME_TYPES.YEARLY : TIME_TYPES.MONTHLY;
+    setTimeType(timeType);
+  };
+
   return (
     <FormLayout title={pageData.title} description={pageData.description}>
-      <section className='flex gap-5'>
+      <section className='flex justify-between w-full '>
         <BillingCard
           title={'Arcade'}
           price={'90'}
@@ -40,17 +40,18 @@ export const AddonsPage = () => {
           iconImg={'src/assets/images/icon-pro.svg'}
         />
       </section>
+      <footer className='flex flex-col gap-28 '>
+        <section className='bg-magnolia p-3'>
+          <ToggleIcon handleChecked={handleChecked} />
+        </section>
 
-    <section className='bg-magnolia mt-16'>
-        <ToggleIcon handleChecked={handleChecked} />
-    </section>
-
-      <button
-        type='submit'
-        className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-20'
-      >
-        {BUTTONS_TEXT.NEXT_STEP}
-      </button>
+        <button
+          type='submit'
+          className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5'
+        >
+          {BUTTONS_TEXT.NEXT_STEP}
+        </button>
+      </footer>
     </FormLayout>
   );
 };
