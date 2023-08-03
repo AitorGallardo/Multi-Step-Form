@@ -1,18 +1,12 @@
 import { useForm } from '../hooks/useForm';
 import { FormLayout } from '../layout/FormLayout';
-import { INIT_FIRST_FORM } from '../constants/initForms';
+import { BUTTONS_TEXT, INIT_FIRST_FORM } from '../constants/consts';
 import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
 
 const pageData = {
   title: 'Personal info',
   description: 'Please provide your name, email address, and phone number.',
-};
-
-const frrmm = {
-  name: '',
-  email: '',
-  phone: '',
 };
 
 export const InfoPage = () => {
@@ -26,7 +20,7 @@ export const InfoPage = () => {
     emailValidation,
     phoneValidation,
     isFormValid,
-  } = useForm(frrmm, formValidations);
+  } = useForm(INIT_FIRST_FORM, formValidations);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const handleSubmit = (e) => {
     console.log('Form Submitted');
@@ -100,7 +94,7 @@ export const InfoPage = () => {
           type='submit'
           className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-20'
         >
-          Next Step
+          {BUTTONS_TEXT.NEXT_STEP}
         </button>
       </form>
     </FormLayout>
