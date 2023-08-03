@@ -10,7 +10,6 @@ export const FormLayout = ({ title, description, children }) => {
         <h1 className='text-3xl text-marineBlue font-bold mb-3'>{title}</h1>
         <p className=' text-coolGray text-md whitespace-nowrap mb-8'>{description}</p>
         {children}
-      <button className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-20'>Next Step</button>
       </div>
     </div>
   );

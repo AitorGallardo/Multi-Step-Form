@@ -12,7 +12,7 @@ export const Stepper = () => {
         </span>
       </li>
       <li className='flex w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
-        <span className='flex items-center justify-center w-8 h-8 border border-gray-500 rounded-full shrink-0 dark:border-gray-400'>
+        <span className='flex items-center justify-center w-8 h-8 border border-white text-white rounded-full shrink-0'>
           2
         </span>
         <span>
@@ -21,7 +21,7 @@ export const Stepper = () => {
         </span>
       </li>
       <li className='flex w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
-        <span className='flex items-center justify-center w-8 h-8 border border-gray-500 rounded-full shrink-0 dark:border-gray-400'>
+        <span className='flex items-center justify-center w-8 h-8 border border-white text-white rounded-full shrink-0'>
           3
         </span>
         <span>
@@ -30,7 +30,7 @@ export const Stepper = () => {
         </span>
       </li>
       <li className='flex w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
-        <span className='flex items-center justify-center w-8 h-8 border border-gray-500 rounded-full shrink-0 dark:border-gray-400'>
+        <span className='flex items-center justify-center w-8 h-8 border border-white text-white rounded-full shrink-0 '>
           4
         </span>
         <span>
