@@ -15,3 +15,9 @@ export const TIME_TYPES = {
     YEARLY: 'yr',
 }
 
+export const SUBSCRIPTION_TIERS = {
+    ARCADE: 'Arcade',
+    ADVANCED: 'Advanced',
+    PRO: 'Pro',
+}
+

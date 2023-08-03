@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BillingCard } from '../components/BillingCard';
 import { ToggleIcon } from '../components/ToggleIcon';
-import { BUTTONS_TEXT, TIME_TYPES } from '../constants/consts';
+import { BUTTONS_TEXT, SUBSCRIPTION_TIERS, TIME_TYPES } from '../constants/consts';
 import { FormLayout } from '../layout/FormLayout';
 
 const pageData = {
@@ -10,6 +10,7 @@ const pageData = {
 };
 
 export const AddonsPage = () => {
+  const [selectedPlan, setSelectedPlan] = useState(null);
   const [timeType, setTimeType] = useState(TIME_TYPES.MONTHLY);
 
   const handleChecked = (value) => {
@@ -17,27 +18,37 @@ export const AddonsPage = () => {
     const timeType = value ? TIME_TYPES.YEARLY : TIME_TYPES.MONTHLY;
     setTimeType(timeType);
   };
+  const handleSelectedPlan = (plan) => {
+    console.log('handleSelectedPlan', plan);
+    setSelectedPlan(plan)
+  };
 
   return (
     <FormLayout title={pageData.title} description={pageData.description}>
       <section className='flex justify-between w-full '>
         <BillingCard
-          title={'Arcade'}
+          title={SUBSCRIPTION_TIERS.ARCADE}
           price={'90'}
           timeType={timeType}
           iconImg={'src/assets/images/icon-arcade.svg'}
+          selected={selectedPlan === SUBSCRIPTION_TIERS.ARCADE}
+          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ARCADE)}
         />
         <BillingCard
-          title={'Advanced'}
+          title={SUBSCRIPTION_TIERS.ADVANCED}
           price={'120'}
           timeType={timeType}
           iconImg={'src/assets/images/icon-advanced.svg'}
+          selected={selectedPlan === SUBSCRIPTION_TIERS.ADVANCED}
+          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ADVANCED)}
         />
         <BillingCard
-          title={'Pro'}
+          title={SUBSCRIPTION_TIERS.PRO}
           price={'150'}
           timeType={timeType}
           iconImg={'src/assets/images/icon-pro.svg'}
+          selected={selectedPlan === SUBSCRIPTION_TIERS.PRO}
+          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.PRO)}
         />
       </section>
       <footer className='flex flex-col gap-28 '>
