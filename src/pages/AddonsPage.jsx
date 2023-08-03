@@ -14,12 +14,10 @@ export const AddonsPage = () => {
   const [timeType, setTimeType] = useState(TIME_TYPES.MONTHLY);
 
   const handleChecked = (value) => {
-    console.log('value', value);
     const timeType = value ? TIME_TYPES.YEARLY : TIME_TYPES.MONTHLY;
     setTimeType(timeType);
   };
   const handleSelectedPlan = (plan) => {
-    console.log('handleSelectedPlan', plan);
     setSelectedPlan(plan)
   };
 

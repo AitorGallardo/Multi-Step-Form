@@ -3,13 +3,15 @@ import { FormLayout } from '../layout/FormLayout';
 import { BUTTONS_TEXT, INIT_FIRST_FORM } from '../constants/consts';
 import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { setFirstFormData } from '../store/form';
 const pageData = {
   title: 'Personal info',
   description: 'Please provide your name, email address, and phone number.',
 };
 
 export const InfoPage = () => {
+  const dispatch = useDispatch();
   const {
     formState,
     name,
@@ -23,11 +25,14 @@ export const InfoPage = () => {
   } = useForm(INIT_FIRST_FORM, formValidations);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const handleSubmit = (e) => {
-    console.log('Form Submitted');
+    console.log('Form Submitted', formState);
     e.preventDefault();
     setFormSubmitted(true);
     if (!isFormValid) return;
-    console.log('submit');
+
+    console.log('Form is Valid==> Dispatching data');
+
+    dispatch(setFirstFormData(formState))
   };
   return (
     <FormLayout title={pageData.title} description={pageData.description}>
