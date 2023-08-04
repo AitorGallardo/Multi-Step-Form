@@ -21,3 +21,46 @@ export const SUBSCRIPTION_TIERS = {
     PRO: 'Pro',
 }
 
+export const STEPS = {
+    FIRST: {
+        NUMBER: 1,
+        TEXT: 'YOUR INFO'
+    },
+    SECOND: {
+        NUMBER: 2,
+        TEXT: 'SELECT PLAN'
+    },
+    THIRD: {
+        NUMBER: 3,
+        TEXT: 'ADD-ONS'
+    },
+    FOURTH: {
+        NUMBER: 4,
+        TEXT: 'SUMMARY'
+    },
+
+}
+
+export const FORMS = {
+    INFO: {
+        NUMBER: 1,
+        TITLE: 'name',
+        DESCRITPION:'description',
+    },
+    PLAN: {
+        NUMBER: 2,
+        TITLE: 'name',
+        DESCRITPION:'description',
+    },
+    ADDONS: {
+        NUMBER: 3,
+        TITLE: 'name',
+        DESCRITPION:'description',
+    },
+    SUMMARY: {
+        NUMBER: 4,
+        TITLE: 'name',
+        DESCRITPION:'description',
+    },
+}
+

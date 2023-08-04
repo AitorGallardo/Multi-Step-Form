@@ -1,6 +1,6 @@
 import { useForm } from '../hooks/useForm';
 import { FormLayout } from '../layout/FormLayout';
-import { BUTTONS_TEXT, INIT_FIRST_FORM } from '../constants/consts';
+import { BUTTONS_TEXT, FORMS, INIT_FIRST_FORM } from '../constants/consts';
 import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,6 +9,8 @@ const pageData = {
   title: 'Personal info',
   description: 'Please provide your name, email address, and phone number.',
 };
+
+const {INFO} = FORMS;
 
 export const InfoPage = () => {
   const dispatch = useDispatch();
@@ -35,7 +37,7 @@ export const InfoPage = () => {
     dispatch(setFirstFormData(formState))
   };
   return (
-    <FormLayout title={pageData.title} description={pageData.description}>
+    <FormLayout title={INFO.TITLE} description={INFO.DESCRIPTION} activeNumber={INFO.NUMBER}  >
       <form className='flex flex-col gap-6' onSubmit={handleSubmit}>
         <fieldset className='flex flex-col gap-2'>
           <label className='input__label text-xs' htmlFor={'name'}>
