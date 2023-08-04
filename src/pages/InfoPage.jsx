@@ -5,15 +5,18 @@ import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFirstFormData } from '../store/form';
+import { useNavigate } from 'react-router-dom';
+
 const pageData = {
   title: 'Personal info',
   description: 'Please provide your name, email address, and phone number.',
 };
 
-const {INFO} = FORMS;
+const { INFO } = FORMS;
 
 export const InfoPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     formState,
     name,
@@ -34,10 +37,17 @@ export const InfoPage = () => {
 
     console.log('Form is Valid==> Dispatching data');
 
-    dispatch(setFirstFormData(formState))
+    dispatch(setFirstFormData(formState));
+    navigate('/secondStep', {
+      replace: true,
+    });
   };
   return (
-    <FormLayout title={INFO.TITLE} description={INFO.DESCRIPTION} activeNumber={INFO.NUMBER}  >
+    <FormLayout
+      title={INFO.TITLE}
+      description={INFO.DESCRIPTION}
+      activeNumber={INFO.NUMBER}
+    >
       <form className='flex flex-col gap-6' onSubmit={handleSubmit}>
         <fieldset className='flex flex-col gap-2'>
           <label className='input__label text-xs' htmlFor={'name'}>
@@ -66,7 +76,11 @@ export const InfoPage = () => {
           </label>
           <input
             className={`border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
-            ${emailValidation?.length > 0 && formSubmitted ? 'border-strawberryRed' : ''}`}
+            ${
+              emailValidation?.length > 0 && formSubmitted
+                ? 'border-strawberryRed'
+                : ''
+            }`}
             type='email'
             id='email'
             name='email'
@@ -85,7 +99,12 @@ export const InfoPage = () => {
           </label>
           <input
             className={`border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
-            ${phoneValidation?.length > 0 && formSubmitted ? 'border-strawberryRed' : ''}`}            type='text'
+            ${
+              phoneValidation?.length > 0 && formSubmitted
+                ? 'border-strawberryRed'
+                : ''
+            }`}
+            type='text'
             id='phone'
             name='phone'
             value={phone}
