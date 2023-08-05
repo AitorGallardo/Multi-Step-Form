@@ -3,7 +3,7 @@ import { FormLayout } from '../layout/FormLayout';
 import { BUTTONS_TEXT, FORMS, INIT_FIRST_FORM } from '../constants/consts';
 import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setFirstFormData } from '../store/form';
 import { useNavigate } from 'react-router-dom';
 

@@ -8,6 +8,7 @@ export const formSlice = createSlice({
     phone: '',
     selectedPlan: '',
     billingPlan: '',
+    addons: [],
   },
   reducers: {
     setFirstFormData: (state,{payload}) => {
@@ -19,7 +20,10 @@ export const formSlice = createSlice({
       state.selectedPlan = payload.selectedPlan;
       state.billingPlan = payload.billingPlan;
     },
+    setThirdFormData: (state,{payload}) => {
+      state.addons = [...payload.addons];
+    },
   },
 });
 
-export const { setFirstFormData,setSecondFormData } = formSlice.actions;
+export const { setFirstFormData,setSecondFormData,setThirdFormData } = formSlice.actions;

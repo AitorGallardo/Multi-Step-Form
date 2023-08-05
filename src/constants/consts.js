@@ -20,6 +20,35 @@ export const SUBSCRIPTION_TIERS = {
     ADVANCED: 'Advanced',
     PRO: 'Pro',
 }
+export const ADDONS_OPTIONS = {
+    ONLINE: {
+        VALUE: 'online',
+        TITLE: 'Online service',
+        DESCRIPTION: 'Access to multiplayer games',
+        PRICE: {
+            MONTHLY: 1,
+            YEARLY: 10,
+        }   
+    },
+    STORAGE: {
+        VALUE: 'storage',
+        TITLE: 'Larger storage',
+        DESCRIPTION: 'Extra 1TB of cloud save',
+        PRICE: {
+            MONTHLY: 2,
+            YEARLY: 20,
+        }   
+    },
+    CUSTOM: {
+        VALUE: 'custom',
+        TITLE: 'Customizable profile',
+        DESCRIPTION: 'Custom theme on your profile',
+        PRICE: {
+            MONTHLY: 2,
+            YEARLY: 20,
+        }   
+    },
+}
 
 export const STEPS = {
     FIRST: {
