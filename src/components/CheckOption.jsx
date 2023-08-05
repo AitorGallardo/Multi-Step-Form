@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-export default function CheckOption({title, description, price,time,handleSelectedOption}) {
-  const [selected, setSelected] = useState(false);
+export default function CheckOption({title, description, price,time,selected=false,handleSelectedOption}) {
+  const [isSelected, setIsSelected] = useState(selected);
 
-  const handleOnChange = () => {
+  const handleOnChange = (e) => {
     handleSelectedOption(!selected)
-    setSelected(!selected)
+    setIsSelected(!selected)
   }
   return (
-    <div className={`flex gap-3 items-center px-4 border border-gray-200 rounded-lg hover:border-purpishBlue cursor-pointer ${selected ? 'bg-magnolia border-purpishBlue': ''}`}>
+    <article className={`flex gap-3 items-center px-4 border border-gray-200 rounded-lg hover:border-purpishBlue cursor-pointer ${isSelected ? 'bg-magnolia border-purpishBlue': ''}`}>
       <input
         id='bordered-checkbox-1'
         type='checkbox'
@@ -17,14 +17,14 @@ export default function CheckOption({title, description, price,time,handleSelect
         onChange={handleOnChange}
         className="w-5 h-5 text-purpishBlue bg-gray-100 border-gray-300 rounded focus:ring-0 focus:ring-transparent cursor-pointer"
       />
-      <label
+      <div
         htmlFor='bordered-checkbox-1'
         className='w-full py-4 ml-2 text-sm font-medium '
       >
         <p className="text-marineBlue">{title}</p>
         <p className="text-coolGray">{description}</p>
-      </label>
+      </div>
         <span className="text-purpishBlue">+${price}/{time}</span>
-    </div>
+    </article>
   );
 }

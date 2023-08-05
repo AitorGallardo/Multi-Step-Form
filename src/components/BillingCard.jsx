@@ -1,4 +1,4 @@
-import { TIME_TYPES } from '../constants/consts';
+import { BILLING_PLANS } from '../constants/consts';
 export const BillingCard = ({ title, price, timeType, iconImg,selected=false,onSelect }) => {
   return (
     <article
@@ -13,7 +13,7 @@ export const BillingCard = ({ title, price, timeType, iconImg,selected=false,onS
         <p className='text-xs text-coolGray'>{`$${price}/${timeType}`}</p>
         <div
           className={`grid grid-rows-[0fr] transition-all ${
-            timeType === TIME_TYPES.YEARLY
+            timeType === BILLING_PLANS.YEARLY
               ? 'grid-rows-[1fr]'
               : 'grid-rows-[0fr]'
           }`}

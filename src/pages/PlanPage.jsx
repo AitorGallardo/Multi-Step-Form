@@ -1,40 +1,53 @@
 import { useState } from 'react';
 import { BillingCard } from '../components/BillingCard';
 import { ToggleIcon } from '../components/ToggleIcon';
-import { BUTTONS_TEXT, FORMS, SUBSCRIPTION_TIERS, TIME_TYPES } from '../constants/consts';
+import {
+  BUTTONS_TEXT,
+  FORMS,
+  SUBSCRIPTION_TIERS,
+  BILLING_PLANS,
+} from '../constants/consts';
 import { FormLayout } from '../layout/FormLayout';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSecondFormData } from '../store/form';
-
 
 const { PLAN } = FORMS;
 
 export const PlanPage = () => {
   const dispatch = useDispatch();
-  
-  const [selectedPlan, setSelectedPlan] = useState(SUBSCRIPTION_TIERS.ARCADE);
-  const [timeType, setTimeType] = useState(TIME_TYPES.MONTHLY);
+  const { selectedPlan: statePlan, billingPlan } = useSelector(
+    (state) => state.form
+  );
+  const [selectedPlan, setSelectedPlan] = useState(statePlan);
+  const [billingType, setBillingType] = useState(billingPlan);
 
   const handleChecked = (value) => {
-    const timeType = value ? TIME_TYPES.YEARLY : TIME_TYPES.MONTHLY;
-    setTimeType(timeType);
+    const timeType = value ? BILLING_PLANS.YEARLY : BILLING_PLANS.MONTHLY;
+    setBillingType(timeType);
   };
   const handleSelectedPlan = (plan) => {
-    setSelectedPlan(plan)
+    setSelectedPlan(plan);
   };
 
   const handleSubmit = () => {
-    console.log('Second form submitted',{selectedPlan, billingPlan: timeType});
-    dispatch(setSecondFormData({selectedPlan, billingPlan: timeType}));
-  }
+    console.log('Second form submitted', {
+      selectedPlan,
+      billingPlan: billingType,
+    });
+    dispatch(setSecondFormData({ selectedPlan, billingPlan: billingType }));
+  };
 
   return (
-    <FormLayout title={PLAN.TITLE} description={PLAN.DESCRIPTION} activeNumber={PLAN.NUMBER}>
+    <FormLayout
+      title={PLAN.TITLE}
+      description={PLAN.DESCRIPTION}
+      activeNumber={PLAN.NUMBER}
+    >
       <section className='flex justify-between w-full '>
         <BillingCard
           title={SUBSCRIPTION_TIERS.ARCADE}
           price={'90'}
-          timeType={timeType}
+          timeType={billingType}
           iconImg={'src/assets/images/icon-arcade.svg'}
           selected={selectedPlan === SUBSCRIPTION_TIERS.ARCADE}
           onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ARCADE)}
@@ -42,7 +55,7 @@ export const PlanPage = () => {
         <BillingCard
           title={SUBSCRIPTION_TIERS.ADVANCED}
           price={'120'}
-          timeType={timeType}
+          timeType={billingType}
           iconImg={'src/assets/images/icon-advanced.svg'}
           selected={selectedPlan === SUBSCRIPTION_TIERS.ADVANCED}
           onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ADVANCED)}
@@ -50,7 +63,7 @@ export const PlanPage = () => {
         <BillingCard
           title={SUBSCRIPTION_TIERS.PRO}
           price={'150'}
-          timeType={timeType}
+          timeType={billingType}
           iconImg={'src/assets/images/icon-pro.svg'}
           selected={selectedPlan === SUBSCRIPTION_TIERS.PRO}
           onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.PRO)}
@@ -58,15 +71,22 @@ export const PlanPage = () => {
       </section>
       <footer className='flex flex-col gap-28 '>
         <section className='bg-magnolia p-3'>
-          <ToggleIcon handleChecked={handleChecked} />
+          <ToggleIcon
+            handleChecked={handleChecked}
+            initialValue={billingPlan === BILLING_PLANS.YEARLY}
+          />
         </section>
-
-        <button
-          onClick={handleSubmit}
-          className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5'
-        >
-          {BUTTONS_TEXT.NEXT_STEP}
-        </button>
+        <div className='flex justify-between'>
+          <button className='w-fit self-end text-coolGray hover:text-marineBlue font-medium rounded-lg text-sm px-5 py-2.5'>
+            {BUTTONS_TEXT.GO_BACK}
+          </button>
+          <button
+            onClick={handleSubmit}
+            className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800font-medium rounded-lg text-sm px-5 py-2.5'
+          >
+            {BUTTONS_TEXT.NEXT_STEP}
+          </button>
+        </div>
       </footer>
     </FormLayout>
   );

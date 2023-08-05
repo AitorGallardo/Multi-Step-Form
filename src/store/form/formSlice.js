@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { SUBSCRIPTION_TIERS,BILLING_PLANS } from '../../constants/consts';
 
 export const formSlice = createSlice({
   name: 'form',
@@ -6,8 +7,8 @@ export const formSlice = createSlice({
     name: '',
     email: '',
     phone: '',
-    selectedPlan: '',
-    billingPlan: '',
+    selectedPlan: SUBSCRIPTION_TIERS.ARCADE,
+    billingPlan: BILLING_PLANS.MONTHLY,
     addons: [],
   },
   reducers: {

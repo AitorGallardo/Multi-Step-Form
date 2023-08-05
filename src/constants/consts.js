@@ -10,7 +10,7 @@ export const BUTTONS_TEXT = {
     CONFIRM: 'Confirm',
 }
 
-export const TIME_TYPES = {
+export const BILLING_PLANS = {
     MONTHLY: 'mo',
     YEARLY: 'yr',
 }
