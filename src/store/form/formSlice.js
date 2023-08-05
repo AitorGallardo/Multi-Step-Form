@@ -15,7 +15,11 @@ export const formSlice = createSlice({
       state.email = payload.email;
       state.phone = payload.phone;
     },
+    setSecondFormData: (state,{payload}) => {
+      state.selectedPlan = payload.selectedPlan;
+      state.billingPlan = payload.billingPlan;
+    },
   },
 });
 
-export const { setFirstFormData } = formSlice.actions;
+export const { setFirstFormData,setSecondFormData } = formSlice.actions;

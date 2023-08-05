@@ -2,7 +2,7 @@ import { STEPS } from '../constants/consts';
 
 const { FIRST, SECOND, THIRD, FOURTH } = STEPS;
 
-export const Stepper = (active) => {
+export const Stepper = ({active}) => {
   return (
     <ol className='items-center flex flex-col gap-6'>
       <li className='flex w-full justify-start gap-4 items-center text-blue-600 dark:text-blue-500 '>

@@ -25,5 +25,6 @@ export const FormLayout = ({ title='', description='', activeNumber=1, children 
 FormLayout.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  activeNumber: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
 };

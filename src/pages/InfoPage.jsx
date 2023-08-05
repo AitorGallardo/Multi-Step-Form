@@ -7,10 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFirstFormData } from '../store/form';
 import { useNavigate } from 'react-router-dom';
 
-const pageData = {
-  title: 'Personal info',
-  description: 'Please provide your name, email address, and phone number.',
-};
+
 
 const { INFO } = FORMS;
 
@@ -38,6 +35,8 @@ export const InfoPage = () => {
     console.log('Form is Valid==> Dispatching data');
 
     dispatch(setFirstFormData(formState));
+    console.log('First form submitted',formState);
+
     navigate('/secondStep', {
       replace: true,
     });

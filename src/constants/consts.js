@@ -44,23 +44,23 @@ export const STEPS = {
 export const FORMS = {
     INFO: {
         NUMBER: 1,
-        TITLE: 'name',
-        DESCRITPION:'description',
+        TITLE: 'Personal info',
+        DESCRIPTION:'Please provide your name, email address, and phone number.',
     },
     PLAN: {
         NUMBER: 2,
-        TITLE: 'name',
-        DESCRITPION:'description',
+        TITLE: 'Select your plan',
+        DESCRIPTION:'You have the option of monthly or yearly billing.',
     },
     ADDONS: {
         NUMBER: 3,
-        TITLE: 'name',
-        DESCRITPION:'description',
+        TITLE: 'Pick add-ons',
+        DESCRIPTION:'Add-ons help enhance your gaming experience.',
     },
     SUMMARY: {
         NUMBER: 4,
-        TITLE: 'name',
-        DESCRITPION:'description',
+        TITLE: 'Finishing up',
+        DESCRIPTION:'Double-check everything looks OK before confirming.',
     },
 }
 
