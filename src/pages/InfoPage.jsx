@@ -3,7 +3,7 @@ import { FormLayout } from '../layout/FormLayout';
 import { BUTTONS_TEXT, FORMS, INIT_FIRST_FORM } from '../constants/consts';
 import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setFirstFormData } from '../store/form';
 import { useNavigateForms } from '../hooks/useNavigateForms';
 
@@ -14,6 +14,7 @@ const { INFO } = FORMS;
 export const InfoPage = () => {
   const nextNavigation = '/secondStep';
   const {goNext} = useNavigateForms({nextNavigation});
+  const {personalInfo} = useSelector(state => state.form)
 
   const dispatch = useDispatch();
   const {
@@ -26,7 +27,7 @@ export const InfoPage = () => {
     emailValidation,
     phoneValidation,
     isFormValid,
-  } = useForm(INIT_FIRST_FORM, formValidations);
+  } = useForm(personalInfo, formValidations);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const handleSubmit = (e) => {
     console.log('Form Submitted', formState);

@@ -1,21 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { SUBSCRIPTION_TIERS,BILLING_PLANS } from '../../constants/consts';
+import { INIT_FIRST_FORM, SUBSCRIPTION_TIERS,BILLING_PLANS } from '../../constants/consts';
 
 export const formSlice = createSlice({
   name: 'form',
   initialState: {
-    name: '',
-    email: '',
-    phone: '',
+    personalInfo: INIT_FIRST_FORM,
     selectedPlan: SUBSCRIPTION_TIERS.ARCADE,
     billingPlan: BILLING_PLANS.MONTHLY,
     addons: [],
   },
   reducers: {
-    setFirstFormData: (state,{payload}) => {
-      state.name = payload.name;
-      state.email = payload.email;
-      state.phone = payload.phone;
+    setFirstFormData: ({personalInfo},{payload}) => {
+      personalInfo.name = payload.name;
+      personalInfo.email = payload.email;
+      personalInfo.phone = payload.phone;
     },
     setSecondFormData: (state,{payload}) => {
       state.selectedPlan = payload.selectedPlan;
