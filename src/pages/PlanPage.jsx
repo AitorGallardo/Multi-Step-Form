@@ -10,10 +10,14 @@ import {
 import { FormLayout } from '../layout/FormLayout';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSecondFormData } from '../store/form';
+import { useNavigateForms } from '../hooks/useNavigateForms';
 
 const { PLAN } = FORMS;
 
 export const PlanPage = () => {
+  const backNavigation = '/firstStep', nextNavigation = '/thirdStep';
+  const {goBack,goNext} = useNavigateForms({backNavigation,nextNavigation});
+
   const dispatch = useDispatch();
   const { selectedPlan: statePlan, billingPlan } = useSelector(
     (state) => state.form
@@ -29,12 +33,14 @@ export const PlanPage = () => {
     setSelectedPlan(plan);
   };
 
+
   const handleSubmit = () => {
     console.log('Second form submitted', {
       selectedPlan,
       billingPlan: billingType,
     });
     dispatch(setSecondFormData({ selectedPlan, billingPlan: billingType }));
+    goNext()
   };
 
   return (
@@ -77,7 +83,7 @@ export const PlanPage = () => {
           />
         </section>
         <div className='flex justify-between'>
-          <button className='w-fit self-end text-coolGray hover:text-marineBlue font-medium rounded-lg text-sm px-5 py-2.5'>
+          <button onClick={goBack} className='w-fit self-end text-coolGray hover:text-marineBlue font-medium rounded-lg text-sm px-5 py-2.5'>
             {BUTTONS_TEXT.GO_BACK}
           </button>
           <button

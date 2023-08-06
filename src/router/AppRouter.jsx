@@ -10,7 +10,7 @@ export const AppRouter = () => {
             <Route path="/firstStep" element={<InfoPage />} />
             <Route path="/secondStep" element={<PlanPage />} />
             <Route path="/thirdStep" element={<AddonsPage />} />
-            <Route path='/*' element={<Navigate to='/thirdStep' />} />
+            <Route path='/*' element={<Navigate to='/secondStep' />} />
             {/* <Route path='/*' element={<Navigate to='/firstStep' />} /> */}
         </Routes>
     </>

@@ -5,15 +5,17 @@ import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setFirstFormData } from '../store/form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigateForms } from '../hooks/useNavigateForms';
 
 
 
 const { INFO } = FORMS;
 
 export const InfoPage = () => {
+  const nextNavigation = '/secondStep';
+  const {goNext} = useNavigateForms({nextNavigation});
+
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const {
     formState,
     name,
@@ -37,9 +39,7 @@ export const InfoPage = () => {
     dispatch(setFirstFormData(formState));
     console.log('First form submitted',formState);
 
-    navigate('/secondStep', {
-      replace: true,
-    });
+    goNext()
   };
   return (
     <FormLayout
