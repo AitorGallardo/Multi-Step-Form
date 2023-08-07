@@ -5,7 +5,7 @@ export const formSlice = createSlice({
   name: 'form',
   initialState: {
     personalInfo: INIT_FIRST_FORM,
-    selectedPlan: SUBSCRIPTION_TIERS.ARCADE,
+    selectedPlan: SUBSCRIPTION_TIERS.ARCADE.VALUE,
     billingPlan: BILLING_PLANS.MONTHLY,
     addons: [],
   },

@@ -51,28 +51,28 @@ export const PlanPage = () => {
     >
       <section className='flex justify-between w-full '>
         <BillingCard
-          title={SUBSCRIPTION_TIERS.ARCADE}
-          price={'90'}
+          title={SUBSCRIPTION_TIERS.ARCADE.VALUE}
+          price={billingType === BILLING_PLANS.MONTHLY ? SUBSCRIPTION_TIERS.ARCADE.PRICE_MONTHLY : SUBSCRIPTION_TIERS.ARCADE.PRICE_YEARLY}
           timeType={billingType}
           iconImg={'src/assets/images/icon-arcade.svg'}
-          selected={selectedPlan === SUBSCRIPTION_TIERS.ARCADE}
-          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ARCADE)}
+          selected={selectedPlan === SUBSCRIPTION_TIERS.ARCADE.VALUE}
+          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ARCADE.VALUE)}
         />
         <BillingCard
-          title={SUBSCRIPTION_TIERS.ADVANCED}
-          price={'120'}
+          title={SUBSCRIPTION_TIERS.ADVANCED.VALUE}
+          price={billingType === BILLING_PLANS.MONTHLY ? SUBSCRIPTION_TIERS.ADVANCED.PRICE_MONTHLY : SUBSCRIPTION_TIERS.ADVANCED.PRICE_YEARLY}
           timeType={billingType}
           iconImg={'src/assets/images/icon-advanced.svg'}
-          selected={selectedPlan === SUBSCRIPTION_TIERS.ADVANCED}
-          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ADVANCED)}
+          selected={selectedPlan === SUBSCRIPTION_TIERS.ADVANCED.VALUE}
+          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ADVANCED.VALUE)}
         />
         <BillingCard
-          title={SUBSCRIPTION_TIERS.PRO}
-          price={'150'}
+          title={SUBSCRIPTION_TIERS.PRO.VALUE}
+          price={billingType === BILLING_PLANS.MONTHLY ? SUBSCRIPTION_TIERS.PRO.PRICE_MONTHLY : SUBSCRIPTION_TIERS.PRO.PRICE_YEARLY}
           timeType={billingType}
           iconImg={'src/assets/images/icon-pro.svg'}
-          selected={selectedPlan === SUBSCRIPTION_TIERS.PRO}
-          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.PRO)}
+          selected={selectedPlan === SUBSCRIPTION_TIERS.PRO.VALUE}
+          onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.PRO.VALUE)}
         />
       </section>
       <footer className='flex flex-col gap-28 '>

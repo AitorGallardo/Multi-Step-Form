@@ -16,9 +16,21 @@ export const BILLING_PLANS = {
 }
 
 export const SUBSCRIPTION_TIERS = {
-    ARCADE: 'Arcade',
-    ADVANCED: 'Advanced',
-    PRO: 'Pro',
+    ARCADE: {
+        VALUE: 'Arcade',
+        PRICE_MONTHLY: 9,
+        PRICE_YEARLY: 90,
+    },
+    ADVANCED: {
+        VALUE: 'Advanced',
+        PRICE_MONTHLY: 12,
+        PRICE_YEARLY: 120,
+    },
+    PRO: {
+        VALUE: 'Pro',
+        PRICE_MONTHLY: 15,
+        PRICE_YEARLY: 150,
+    },
 }
 export const ADDONS_OPTIONS = {
     ONLINE: {
