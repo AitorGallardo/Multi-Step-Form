@@ -5,6 +5,7 @@ import {
   BILLING_PLANS,
   SUBSCRIPTION_TIERS,
   ADDONS_OPTIONS,
+  SUCCESSFUL_FORM
 } from '../constants/consts';
 import { FormLayout } from '../layout/FormLayout';
 import { useSelector } from 'react-redux';
@@ -51,10 +52,8 @@ export const SummaryPage = () => {
   const totaPrice = useMemo(() => {
     return selectedAddonsFormatted.reduce((acc, addon) => {
       return acc + addon.price;
-    } , planPrice); 
-
+    }, planPrice);
   }, [planPrice, selectedAddonsFormatted]);
-
 
   const handleConfirm = () => {
     setIsConfirmed(true);
@@ -75,7 +74,10 @@ export const SummaryPage = () => {
                 {billingPlan === BILLING_PLANS.MONTHLY ? 'Monthly' : 'Yearly'})
               </div>
               {/* TODO :: Poner un Link de react-router-dom para ir a addons form*/}
-              <Link to='/secondStep' className='w-fit resume__plan__change-option text-coolGray hover:text-purpishBlue underline decoration-2 cursor-pointer'>
+              <Link
+                to='/secondStep'
+                className='w-fit resume__plan__change-option text-coolGray hover:text-purpishBlue underline decoration-2 cursor-pointer'
+              >
                 Change
               </Link>
             </div>
@@ -86,10 +88,7 @@ export const SummaryPage = () => {
           <ul className='resume__addons flex flex-col gap-3 py-4'>
             {selectedAddonsFormatted.map((addon) => {
               return (
-                <li
-                  key={addon.title}
-                  className='flex justify-between text-xs'
-                >
+                <li key={addon.title} className='flex justify-between text-xs'>
                   <span className='text-coolGray'>{addon.title}</span>
                   <span className='text-marineBlue'>
                     +${addon.price}/{billingPlan}
@@ -100,7 +99,10 @@ export const SummaryPage = () => {
           </ul>
         </div>
         <div className='resume__total flex justify-between p-4'>
-          <span className='text-coolGray'>Total (per {billingPlan === BILLING_PLANS.MONTHLY ? 'month' : 'year'})</span>
+          <span className='text-coolGray'>
+            Total (per{' '}
+            {billingPlan === BILLING_PLANS.MONTHLY ? 'month' : 'year'})
+          </span>
           <span className='text-purpishBlue text-lg font-bold'>
             +${totaPrice}/{billingPlan}
           </span>
@@ -119,10 +121,16 @@ export const SummaryPage = () => {
           className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5'
         >
           {BUTTONS_TEXT.CONFIRM}
-        </button>
+        </button> 
       </footer>
     </FormLayout>
   ) : (
-    <div>Form submitted</div>
+    <FormLayout activeNumber={SUMMARY.NUMBER} showHeader={false}>
+      <section className='flex flex-col gap-4 h-full justify-center items-center'>
+        <img className='mb-4' width={70} height={70} src={SUCCESSFUL_FORM.IMG.SRC} alt={SUCCESSFUL_FORM.IMG.ALT} />
+        <h1 className='text-3xl font-bold text-marineBlue'>{SUCCESSFUL_FORM.TITLE}</h1>
+        <p className='text-coolGray w-[73%] text-center text-sm'>{SUCCESSFUL_FORM.DESCRIPTION}</p>
+      </section>
+    </FormLayout>
   );
 };
