@@ -20,7 +20,7 @@ export const SummaryPage = () => {
     backNavigation,
   });
 
-  const { selectedPlan, billingPlan, addons } = useSelector(
+  const { selectedPlan, billingPlan, addons, validPersonalInfo } = useSelector(
     (state) => state.form
   );
 
@@ -56,6 +56,7 @@ export const SummaryPage = () => {
   }, [planPrice, selectedAddonsFormatted]);
 
   const handleConfirm = () => {
+    // validPersonalInfo
     setIsConfirmed(true);
   };
 
@@ -129,7 +130,7 @@ export const SummaryPage = () => {
       <section className='flex flex-col gap-4 h-full justify-center items-center'>
         <img className='mb-4' width={70} height={70} src={SUCCESSFUL_FORM.IMG.SRC} alt={SUCCESSFUL_FORM.IMG.ALT} />
         <h1 className='text-3xl font-bold text-marineBlue'>{SUCCESSFUL_FORM.TITLE}</h1>
-        <p className='text-coolGray w-[73%] text-center text-sm'>{SUCCESSFUL_FORM.DESCRIPTION}</p>
+        <p className='text-coolGray text-center text-sm'>{SUCCESSFUL_FORM.DESCRIPTION}</p>
       </section>
     </FormLayout>
   );

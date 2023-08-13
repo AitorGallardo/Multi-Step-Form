@@ -1,10 +1,10 @@
 import { useForm } from '../hooks/useForm';
 import { FormLayout } from '../layout/FormLayout';
-import { BUTTONS_TEXT, FORMS, INIT_FIRST_FORM } from '../constants/consts';
+import { BUTTONS_TEXT, FORMS } from '../constants/consts';
 import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFirstFormData } from '../store/form';
+import { setFirstFormData, setFirstStepCompleted } from '../store/form';
 import { useNavigateForms } from '../hooks/useNavigateForms';
 
 
@@ -33,11 +33,12 @@ export const InfoPage = () => {
     console.log('Form Submitted', formState);
     e.preventDefault();
     setFormSubmitted(true);
+    dispatch(setFirstStepCompleted(false));
     if (!isFormValid) return;
 
     console.log('Form is Valid==> Dispatching data');
 
-    dispatch(setFirstFormData(formState));
+    dispatch(setFirstFormData({formState,isFormValid}));
     console.log('First form submitted',formState);
 
     goNext()
