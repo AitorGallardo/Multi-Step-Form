@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function CheckOption({title, description, price,time,selected=false,handleSelectedOption}) {
   const [isSelected, setIsSelected] = useState(selected);
 
-  const handleOnChange = (e) => {
+  const handleOnChange = () => {
     handleSelectedOption(!selected)
     setIsSelected(!selected)
   }

@@ -1,6 +1,6 @@
 import { useForm } from '../hooks/useForm';
 import { FormLayout } from '../layout/FormLayout';
-import { BUTTONS_TEXT, FORMS } from '../constants/consts';
+import { BUTTONS_TEXT, FIRST_FORM_LABELS, FORMS } from '../constants/consts';
 import { formValidations } from '../helpers/validations';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -52,7 +52,7 @@ export const InfoPage = () => {
       <form className='flex flex-col gap-6' onSubmit={handleSubmit}>
         <fieldset className='flex flex-col gap-2'>
           <label className='input__label text-xs' htmlFor={'name'}>
-            Name
+            {FIRST_FORM_LABELS.NAME}
           </label>
           <input
             className={`border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
@@ -73,7 +73,7 @@ export const InfoPage = () => {
         </fieldset>
         <fieldset className='flex flex-col gap-2'>
           <label className='input__label text-xs' htmlFor={'email'}>
-            Email Address
+          {FIRST_FORM_LABELS.EMAIL}
           </label>
           <input
             className={`border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
@@ -96,7 +96,7 @@ export const InfoPage = () => {
         </fieldset>
         <fieldset className='flex flex-col gap-2'>
           <label className='input__label text-xs' htmlFor={'phone'}>
-            Phone Number
+          {FIRST_FORM_LABELS.PHONE}
           </label>
           <input
             className={`border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 

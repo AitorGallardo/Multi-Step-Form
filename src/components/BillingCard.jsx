@@ -1,11 +1,11 @@
-import { BILLING_PLANS } from '../constants/consts';
+import { BILLING_PLANS, PLAN_BILLING_CARD_ICON } from '../constants/consts';
 export const BillingCard = ({ title, price, timeType, iconImg,selected=false,onSelect }) => {
   return (
     <article
       className={`flex flex-col justify-between gap-10 w-32  border  rounded-lg hover:border-purpishBlue ${selected ? 'border-purpishBlue bg-magnolia': 'border-coolGray bg-white'} cursor-pointer px-3 py-3 transition-all`}
       onClick={onSelect}
     >
-      <img width={40} src={iconImg}></img>
+      <img width={PLAN_BILLING_CARD_ICON.SIZE} src={iconImg}></img>
       <footer>
         <h5 className='text-sm text-marineBlue font-bold'>
           {title}
@@ -19,7 +19,7 @@ export const BillingCard = ({ title, price, timeType, iconImg,selected=false,onS
           }`}
         >
           <p className={`text-xs text-marineBlue overflow-hidden`}>
-            2 months free
+            {BILLING_PLANS.FREE_TIER_TIME}
           </p>
         </div>
 

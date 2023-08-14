@@ -4,6 +4,12 @@ export const INIT_FIRST_FORM = {
   phone: '',
 };
 
+export const FIRST_FORM_LABELS = {
+  NAME: 'Name',
+  EMAIL: 'Email Address',
+  PHONE: 'Phone Number',
+};
+
 export const BUTTONS_TEXT = {
   NEXT_STEP: 'Next Step',
   GO_BACK: 'Go Back',
@@ -13,7 +19,15 @@ export const BUTTONS_TEXT = {
 export const BILLING_PLANS = {
   MONTHLY: 'mo',
   YEARLY: 'yr',
+  FREE_TIER_TIME: '2 months free',
 };
+
+export const PLAN_BILLING_CARD_ICON = {
+  SIZE: 40,
+  ARCADE:'src/assets/images/icon-arcade.svg',
+  ADVANCED: 'src/assets/images/icon-advanced.svg',
+  PRO: 'src/assets/images/icon-pro.svg',
+}
 
 export const SUBSCRIPTION_TIERS = {
   ARCADE: {

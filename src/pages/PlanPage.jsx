@@ -6,6 +6,7 @@ import {
   FORMS,
   SUBSCRIPTION_TIERS,
   BILLING_PLANS,
+  PLAN_BILLING_CARD_ICON,
 } from '../constants/consts';
 import { FormLayout } from '../layout/FormLayout';
 import { useDispatch, useSelector } from 'react-redux';
@@ -54,7 +55,7 @@ export const PlanPage = () => {
           title={SUBSCRIPTION_TIERS.ARCADE.VALUE}
           price={billingType === BILLING_PLANS.MONTHLY ? SUBSCRIPTION_TIERS.ARCADE.PRICE_MONTHLY : SUBSCRIPTION_TIERS.ARCADE.PRICE_YEARLY}
           timeType={billingType}
-          iconImg={'src/assets/images/icon-arcade.svg'}
+          iconImg={PLAN_BILLING_CARD_ICON.ARCADE}
           selected={selectedPlan === SUBSCRIPTION_TIERS.ARCADE.VALUE}
           onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ARCADE.VALUE)}
         />
@@ -62,7 +63,7 @@ export const PlanPage = () => {
           title={SUBSCRIPTION_TIERS.ADVANCED.VALUE}
           price={billingType === BILLING_PLANS.MONTHLY ? SUBSCRIPTION_TIERS.ADVANCED.PRICE_MONTHLY : SUBSCRIPTION_TIERS.ADVANCED.PRICE_YEARLY}
           timeType={billingType}
-          iconImg={'src/assets/images/icon-advanced.svg'}
+          iconImg={PLAN_BILLING_CARD_ICON.ADVANCED}
           selected={selectedPlan === SUBSCRIPTION_TIERS.ADVANCED.VALUE}
           onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ADVANCED.VALUE)}
         />
@@ -70,7 +71,7 @@ export const PlanPage = () => {
           title={SUBSCRIPTION_TIERS.PRO.VALUE}
           price={billingType === BILLING_PLANS.MONTHLY ? SUBSCRIPTION_TIERS.PRO.PRICE_MONTHLY : SUBSCRIPTION_TIERS.PRO.PRICE_YEARLY}
           timeType={billingType}
-          iconImg={'src/assets/images/icon-pro.svg'}
+          iconImg={PLAN_BILLING_CARD_ICON.PRO}
           selected={selectedPlan === SUBSCRIPTION_TIERS.PRO.VALUE}
           onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.PRO.VALUE)}
         />
