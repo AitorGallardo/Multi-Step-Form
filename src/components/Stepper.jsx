@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { STEPS } from '../constants/consts';
 
 const { FIRST, SECOND, THIRD, FOURTH } = STEPS;
@@ -75,4 +77,11 @@ export const Stepper = ({active}) => {
       </li>
     </ol>
   );
+};
+
+
+
+
+Stepper.propTypes = {
+  active: PropTypes.number.isRequired,
 };

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useState } from "react";
 
 export const ToggleIcon = ({handleChecked, initialValue}) => {
@@ -21,4 +23,10 @@ export const ToggleIcon = ({handleChecked, initialValue}) => {
       </span>
     </div>
   );
+};
+
+
+ToggleIcon.propTypes = {
+  handleChecked: PropTypes.func,
+  initialValue: PropTypes.bool,
 };

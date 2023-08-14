@@ -20,7 +20,7 @@ export const SummaryPage = () => {
     backNavigation,
   });
 
-  const { selectedPlan, billingPlan, addons, validPersonalInfo } = useSelector(
+  const { selectedPlan, billingPlan, addons } = useSelector(
     (state) => state.form
   );
 

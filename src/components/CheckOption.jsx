@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useState } from "react";
 
 export default function CheckOption({title, description, price,time,selected=false,handleSelectedOption}) {
@@ -29,3 +31,14 @@ export default function CheckOption({title, description, price,time,selected=fal
     </article>
   );
 }
+
+
+// Prop types validation
+CheckOption.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.string,
+  time: PropTypes.string,
+  selected: PropTypes.bool,
+  handleSelectedOption: PropTypes.func.isRequired,
+};

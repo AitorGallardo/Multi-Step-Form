@@ -1,4 +1,8 @@
+import PropTypes from 'prop-types';
+
 import { BILLING_PLANS, PLAN_BILLING_CARD_ICON } from '../constants/consts';
+
+
 export const BillingCard = ({ title, price, timeType, iconImg,selected=false,onSelect }) => {
   return (
     <article
@@ -26,4 +30,13 @@ export const BillingCard = ({ title, price, timeType, iconImg,selected=false,onS
       </footer>
     </article>
   );
+};
+
+BillingCard.propTypes = {
+  title: PropTypes.string,
+  price: PropTypes.string,
+  timeType: PropTypes.string,
+  iconImg: PropTypes.string,
+  selected: PropTypes.bool,
+  onSelect: PropTypes.func.isRequired,
 };
