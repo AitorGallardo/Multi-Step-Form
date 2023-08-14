@@ -37,7 +37,7 @@ export default function CheckOption({title, description, price,time,selected=fal
 CheckOption.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   time: PropTypes.string,
   selected: PropTypes.bool,
   handleSelectedOption: PropTypes.func.isRequired,

@@ -34,7 +34,7 @@ export const BillingCard = ({ title, price, timeType, iconImg,selected=false,onS
 
 BillingCard.propTypes = {
   title: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   timeType: PropTypes.string,
   iconImg: PropTypes.string,
   selected: PropTypes.bool,
