@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import { Stepper } from '../components/Stepper';
 export const FormLayout = ({ title='', description='', activeNumber=1, showHeader=true, children }) => {
   return (
-    <main className='flex h-screen justify-center items-center bg-magnolia'>
-      <article className='flex shadow-lg rounded-xl p-3 w-3/6 bg-white min-h-[600px] max-h-[600px]'>
-        <div className="sidePanel basis-1/3 bg-[url('src/assets/images/bg-sidebar-desktop.svg')] bg-bottom bg-cover rounded-md p-10">
+    <main className='flex h-screen sm:justify-center sm:items-center bg-magnolia'>
+      <article className='flex sm:flex-row flex-col shadow-lg sm:rounded-xl sm:p-3 sm:w-3/6 sm:bg-white sm:min-h-[600px] sm:max-h-[600px] bg-magnolia relative w-full'>
+        <div className="sidePanel basis-1/3 sm:bg-[url('src/assets/images/bg-sidebar-desktop.svg')] sm:rounded-md sm:bg-bottom bg-[url('src/assets/images/bg-sidebar-mobile.svg')] bg-cover p-10 bg-right-bottom">
           <Stepper active={activeNumber} />
         </div>
-        <section className='flex grow flex-col w-3/6 justify-between px-24 pt-9 pb-4'>
+        <section className='flex grow flex-col sm:w-3/6 sm:static justify-between px-24 pt-9 pb-4 mx-10 bg-white absolute top-28 rounded-xl'>
           <header className={`${showHeader ? 'flex flex-col':'hidden'}`}>
             <h1 className='text-3xl text-marineBlue font-bold mb-3'>{title}</h1>
             <p className=' text-coolGray text-md whitespace-nowrap'>

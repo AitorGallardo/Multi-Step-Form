@@ -6,7 +6,7 @@ const { FIRST, SECOND, THIRD, FOURTH } = STEPS;
 
 export const Stepper = ({active}) => {
   return (
-    <ol className='items-center flex flex-col gap-6'>
+    <ol className='items-center flex flex-row sm:flex-col gap-6'>
       <li className='flex w-full justify-start gap-4 items-center text-blue-600 dark:text-blue-500 '>
         <span
           className={`flex items-center justify-center w-8 h-8 border rounded-full shrink-0 ${
@@ -17,7 +17,7 @@ export const Stepper = ({active}) => {
         >
           {FIRST.NUMBER}
         </span>
-        <span>
+        <span className='hidden sm:flex flex-col'>
           <h3 className='text-xs leading-tight text-coolGray'>
             STEP {FIRST.NUMBER}
           </h3>
@@ -34,7 +34,7 @@ export const Stepper = ({active}) => {
         >
           {SECOND.NUMBER}
         </span>
-        <span>
+        <span className='hidden sm:flex flex-col'>
           <h3 className='text-xs leading-tight text-coolGray'>
             STEP {SECOND.NUMBER}
           </h3>
@@ -51,7 +51,7 @@ export const Stepper = ({active}) => {
         >
           {THIRD.NUMBER}
         </span>
-        <span>
+        <span className='hidden sm:flex flex-col'>
           <h3 className='text-xs leading-tight text-coolGray'>
             STEP {THIRD.NUMBER}
           </h3>
@@ -68,7 +68,7 @@ export const Stepper = ({active}) => {
         >
           {FOURTH.NUMBER}
         </span>
-        <span>
+        <span className='hidden sm:flex flex-col'>
           <h3 className='text-xs leading-tight text-coolGray'>
             STEP {FOURTH.NUMBER}
           </h3>

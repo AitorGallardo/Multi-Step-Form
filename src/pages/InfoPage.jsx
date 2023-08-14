@@ -51,7 +51,7 @@ export const InfoPage = () => {
     >
       <form className='flex flex-col gap-6' onSubmit={handleSubmit}>
         <fieldset className='flex flex-col gap-2'>
-          <label className='input__label text-xs' htmlFor={'name'}>
+          <label className='input__label text-xs text-marineBlue' htmlFor={'name'}>
             {FIRST_FORM_LABELS.NAME}
           </label>
           <input
@@ -72,7 +72,7 @@ export const InfoPage = () => {
           )}
         </fieldset>
         <fieldset className='flex flex-col gap-2'>
-          <label className='input__label text-xs' htmlFor={'email'}>
+          <label className='input__label text-xs text-marineBlue' htmlFor={'email'}>
           {FIRST_FORM_LABELS.EMAIL}
           </label>
           <input
@@ -95,7 +95,7 @@ export const InfoPage = () => {
           )}
         </fieldset>
         <fieldset className='flex flex-col gap-2'>
-          <label className='input__label text-xs' htmlFor={'phone'}>
+          <label className='input__label text-xs text-marineBlue' htmlFor={'phone'}>
           {FIRST_FORM_LABELS.PHONE}
           </label>
           <input
