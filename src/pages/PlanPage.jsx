@@ -58,7 +58,7 @@ export const PlanPage = () => {
       activeNumber={PLAN.NUMBER}
       footerConfig={footerConfig}
     >
-      <section className='flex justify-between w-full '>
+      <section className='flex flex-col gap-3 sm:flex-row justify-between w-full '>
         <BillingCard
           title={SUBSCRIPTION_TIERS.ARCADE.VALUE}
           price={billingType === BILLING_PLANS.MONTHLY ? SUBSCRIPTION_TIERS.ARCADE.PRICE_MONTHLY : SUBSCRIPTION_TIERS.ARCADE.PRICE_YEARLY}
@@ -85,7 +85,7 @@ export const PlanPage = () => {
         />
       </section>
       <footer className='flex flex-col gap-28 '>
-        <section className='bg-magnolia p-3'>
+        <section className='bg-magnolia p-3 mt-7 rounded-md'>
           <ToggleIcon
             handleChecked={handleChecked}
             initialValue={billingPlan === BILLING_PLANS.YEARLY}

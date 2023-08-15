@@ -6,7 +6,7 @@ import { BILLING_PLANS, PLAN_BILLING_CARD_ICON } from '../constants/consts';
 export const BillingCard = ({ title, price, timeType, iconImg,selected=false,onSelect }) => {
   return (
     <article
-      className={`flex flex-col justify-between gap-10 w-32  border  rounded-lg hover:border-purpishBlue ${selected ? 'border-purpishBlue bg-magnolia': 'border-coolGray bg-white'} cursor-pointer px-3 py-3 transition-all`}
+      className={`flex sm:flex-col sm:justify-between items-center gap-4 sm:gap-10 sm:w-32  border  rounded-lg hover:border-purpishBlue ${selected ? 'border-purpishBlue bg-magnolia': 'border-coolGray bg-white'} cursor-pointer px-3 py-3 transition-all`}
       onClick={onSelect}
     >
       <img width={PLAN_BILLING_CARD_ICON.SIZE} src={iconImg}></img>

@@ -22,14 +22,14 @@ export const FormLayout = ({
               {description}
             </p>
           </header>
-          {children}
+          <div className='py-4'>{children}</div>
           <div className='hidden sm:inline-block'>
             <Footer {...footerConfig} />
           </div>
         </section>
         <div className='sm:hidden absolute p-4 bg-white w-full bottom-0'>
-            <Footer {...footerConfig} />
-          </div>
+          <Footer {...footerConfig} />
+        </div>
       </article>
     </main>
   );
