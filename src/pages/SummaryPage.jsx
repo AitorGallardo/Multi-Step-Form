@@ -76,7 +76,7 @@ export const SummaryPage = () => {
       footerConfig={footerConfig}
     >
       <section className='flex flex-col'>
-        <div className='resume p-4 pb-0 bg-magnolia rounded-md'>
+        <div className='resume p-4 pb-0 bg-alabaster rounded-md'>
           <div className='resume__plan pb-4 flex justify-between items-center border-b border-lightGray'>
             <div className='flex flex-col'>
               <div className='resume__plan__title text-marineBlue font-medium'>
@@ -135,11 +135,11 @@ export const SummaryPage = () => {
       </footer> */}
     </FormLayout>
   ) : (
-    <FormLayout activeNumber={SUMMARY.NUMBER} showHeader={false}>
-      <section className='flex flex-col gap-4 h-full justify-center items-center'>
+    <FormLayout activeNumber={SUMMARY.NUMBER} showHeader={false} showFooter={false}>
+      <section className='flex flex-col gap-4 min-h-[480px] justify-center items-center text-center'>
         <img className='mb-4' width={70} height={70} src={SUCCESSFUL_FORM.IMG.SRC} alt={SUCCESSFUL_FORM.IMG.ALT} />
         <h1 className='text-3xl font-bold text-marineBlue'>{SUCCESSFUL_FORM.TITLE}</h1>
-        <p className='text-coolGray text-center text-sm'>{SUCCESSFUL_FORM.DESCRIPTION}</p>
+        <p className='text-coolGray text-center text-lg'>{SUCCESSFUL_FORM.DESCRIPTION}</p>
       </section>
     </FormLayout>
   );

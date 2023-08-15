@@ -7,6 +7,7 @@ export const FormLayout = ({
   activeNumber = 1,
   showHeader = true,
   children,
+  showFooter = true,
   footerConfig,
 }) => {
   return (
@@ -22,14 +23,21 @@ export const FormLayout = ({
               {description}
             </p>
           </header>
-          <div className='py-4'>{children}</div>
-          <div className='hidden sm:inline-block'>
+          <div className='py-4 h-full'>{children}</div>
+          {showFooter && (
+            <div className='hidden sm:inline-block'>
+              <Footer {...footerConfig} />
+            </div>
+          )}
+        </section>
+        {showFooter && (
+          <div className='sm:hidden absolute p-4 bg-white w-full bottom-0'>
             <Footer {...footerConfig} />
           </div>
-        </section>
-        <div className='sm:hidden absolute p-4 bg-white w-full bottom-0'>
+        )}
+        {/* <div className='sm:hidden absolute p-4 bg-white w-full bottom-0'>
           <Footer {...footerConfig} />
-        </div>
+        </div> */}
       </article>
     </main>
   );
