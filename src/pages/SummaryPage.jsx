@@ -76,7 +76,7 @@ export const SummaryPage = () => {
       footerConfig={footerConfig}
     >
       <section className='flex flex-col'>
-        <div className='resume p-4 bg-magnolia rounded-md'>
+        <div className='resume p-4 pb-0 bg-magnolia rounded-md'>
           <div className='resume__plan pb-4 flex justify-between items-center border-b border-lightGray'>
             <div className='flex flex-col'>
               <div className='resume__plan__title text-marineBlue font-medium'>
@@ -99,8 +99,8 @@ export const SummaryPage = () => {
             {selectedAddonsFormatted.map((addon) => {
               return (
                 <li key={addon.title} className='flex justify-between text-xs'>
-                  <span className='text-coolGray'>{addon.title}</span>
-                  <span className='text-marineBlue'>
+                  <span className='text-coolGray text-base'>{addon.title}</span>
+                  <span className='text-marineBlue text-base'>
                     +${addon.price}/{billingPlan}
                   </span>
                 </li>
@@ -108,7 +108,7 @@ export const SummaryPage = () => {
             })}
           </ul>
         </div>
-        <div className='resume__total flex justify-between p-4'>
+        <div className='resume__total flex justify-between px-4 pt-4'>
           <span className='text-coolGray'>
             Total (per{' '}
             {billingPlan === BILLING_PLANS.MONTHLY ? 'month' : 'year'})

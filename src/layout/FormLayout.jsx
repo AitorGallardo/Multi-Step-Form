@@ -18,7 +18,7 @@ export const FormLayout = ({
         <section className='flex grow flex-col w-11/12 sm:w-3/6 sm:static justify-between sm:px-24 px-8 pt-9 pb-4  bg-white absolute top-28 left-1/2 -translate-x-1/2 rounded-xl'>
           <header className={`${showHeader ? 'flex flex-col' : 'hidden'}`}>
             <h1 className='text-3xl text-marineBlue font-bold mb-3'>{title}</h1>
-            <p className=' text-coolGray text-md sm:whitespace-nowrap'>
+            <p className='text-coolGray text-lg text-md sm:whitespace-nowrap'>
               {description}
             </p>
           </header>

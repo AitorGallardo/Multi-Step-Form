@@ -16,7 +16,7 @@ export default function Footer({
       {showBack && (
         <button
           onClick={onClickBack}
-          className='w-fit self-end text-coolGray hover:text-marineBlue font-medium rounded-sm sm:rounded-lg text-sm px-5 py-2.5'
+          className='w-fit self-end text-coolGray hover:text-marineBlue font-medium rounded-md sm:rounded-lg text-sm px-5 py-2.5'
         >
           {BUTTONS_TEXT.GO_BACK}
         </button>
@@ -26,7 +26,7 @@ export default function Footer({
         {showNext && (
           <button
             onClick={onClickNext}
-            className='w-fit self-end text-white bg-marineBlue hover:bg-blue-800 font-medium rounded-sm sm:rounded-lg text-sm px-5 py-2.5'
+            className='w-fit self-end text-white bg-marineBlue hover:bg-blue-800 font-medium rounded-md sm:rounded-lg text-sm px-5 py-2.5'
           >
             {BUTTONS_TEXT.NEXT_STEP}
           </button>
@@ -34,7 +34,7 @@ export default function Footer({
         {showConfirm && (
           <button
             onClick={handleConfirm}
-            className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-sm sm:rounded-lg text-sm px-5 py-2.5'
+            className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-md sm:rounded-lg text-sm px-5 py-2.5'
           >
             {BUTTONS_TEXT.CONFIRM}
           </button>
