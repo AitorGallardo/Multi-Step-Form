@@ -20,7 +20,7 @@ export default function Footer({
         </button>
       )}
 
-      <div className='flex w-full justify-end'>
+      <div className='flex grow justify-end'>
         {showNext && (
           <button
             onClick={onClickNext}

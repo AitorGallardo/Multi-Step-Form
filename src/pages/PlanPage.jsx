@@ -44,11 +44,19 @@ export const PlanPage = () => {
     goNext()
   };
 
+  const footerConfig = {
+    showBack: true,
+    showNext: true,
+    onClickBack: goBack,
+    onClickNext: handleSubmit,
+  }
+
   return (
     <FormLayout
       title={PLAN.TITLE}
       description={PLAN.DESCRIPTION}
       activeNumber={PLAN.NUMBER}
+      footerConfig={footerConfig}
     >
       <section className='flex justify-between w-full '>
         <BillingCard
@@ -83,7 +91,7 @@ export const PlanPage = () => {
             initialValue={billingPlan === BILLING_PLANS.YEARLY}
           />
         </section>
-        <div className='flex justify-between'>
+        {/* <div className='flex justify-between'>
           <button onClick={goBack} className='w-fit self-end text-coolGray hover:text-marineBlue font-medium rounded-lg text-sm px-5 py-2.5'>
             {BUTTONS_TEXT.GO_BACK}
           </button>
@@ -93,7 +101,7 @@ export const PlanPage = () => {
           >
             {BUTTONS_TEXT.NEXT_STEP}
           </button>
-        </div>
+        </div> */}
       </footer>
     </FormLayout>
   );

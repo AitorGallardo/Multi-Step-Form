@@ -60,11 +60,20 @@ export const SummaryPage = () => {
     setIsConfirmed(true);
   };
 
+  const footerConfig = {
+    showBack: true,
+    showNext: false,
+    showConfirm: true,
+    onClickBack: goBack,
+    handleConfirm: handleConfirm,
+  };
+
   return !isConfirmed ? (
     <FormLayout
       title={SUMMARY.TITLE}
       description={SUMMARY.DESCRIPTION}
       activeNumber={SUMMARY.NUMBER}
+      footerConfig={footerConfig}
     >
       <section className='flex flex-col'>
         <div className='resume p-4 bg-magnolia rounded-md'>
@@ -109,7 +118,7 @@ export const SummaryPage = () => {
           </span>
         </div>
       </section>
-      <footer className='flex justify-between'>
+      {/* <footer className='flex justify-between'>
         <button
           onClick={goBack}
           className='w-fit self-end text-coolGray hover:text-marineBlue font-medium rounded-lg text-sm px-5 py-2.5'
@@ -123,7 +132,7 @@ export const SummaryPage = () => {
         >
           {BUTTONS_TEXT.CONFIRM}
         </button> 
-      </footer>
+      </footer> */}
     </FormLayout>
   ) : (
     <FormLayout activeNumber={SUMMARY.NUMBER} showHeader={false}>
