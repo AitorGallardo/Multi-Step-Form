@@ -43,11 +43,15 @@ export const InfoPage = () => {
 
     goNext()
   };
+  const footerConfig = {
+    onClickNext: handleSubmit,
+  }
   return (
     <FormLayout
       title={INFO.TITLE}
       description={INFO.DESCRIPTION}
       activeNumber={INFO.NUMBER}
+      footerConfig={footerConfig}
     >
       <form className='flex flex-col gap-6' onSubmit={handleSubmit}>
         <fieldset className='flex flex-col gap-2'>

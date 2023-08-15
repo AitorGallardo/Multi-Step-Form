@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import { Stepper } from '../components/Stepper';
 import Footer from '../components/Footer';
-export const FormLayout = ({ title='', description='', activeNumber=1, showHeader=true, children }) => {
+export const FormLayout = ({
+  title = '',
+  description = '',
+  activeNumber = 1,
+  showHeader = true,
+  children,
+  footerConfig,
+}) => {
   return (
     <main className='flex h-screen sm:justify-center sm:items-center bg-magnolia'>
       <article className='flex sm:flex-row flex-col shadow-lg sm:rounded-xl sm:p-3 sm:w-3/6 sm:bg-white sm:min-h-[600px] sm:max-h-[600px] bg-magnolia relative w-full'>
@@ -9,7 +16,7 @@ export const FormLayout = ({ title='', description='', activeNumber=1, showHeade
           <Stepper active={activeNumber} />
         </div>
         <section className='flex grow flex-col sm:w-3/6 sm:static justify-between px-24 pt-9 pb-4 mx-10 bg-white absolute top-28 rounded-xl'>
-          <header className={`${showHeader ? 'flex flex-col':'hidden'}`}>
+          <header className={`${showHeader ? 'flex flex-col' : 'hidden'}`}>
             <h1 className='text-3xl text-marineBlue font-bold mb-3'>{title}</h1>
             <p className=' text-coolGray text-md whitespace-nowrap'>
               {description}
@@ -22,7 +29,7 @@ export const FormLayout = ({ title='', description='', activeNumber=1, showHeade
         >
           Next Step
         </button> */}
-        <Footer/>
+          <Footer {...footerConfig}/>
         </section>
       </article>
     </main>
@@ -36,4 +43,5 @@ FormLayout.propTypes = {
   activeNumber: PropTypes.number,
   showHeader: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  footerConfig: PropTypes.object,
 };
