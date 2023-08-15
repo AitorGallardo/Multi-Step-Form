@@ -6,8 +6,8 @@ const { FIRST, SECOND, THIRD, FOURTH } = STEPS;
 
 export const Stepper = ({active}) => {
   return (
-    <ol className='items-center flex flex-row sm:flex-col gap-6'>
-      <li className='flex w-full justify-start gap-4 items-center text-blue-600 dark:text-blue-500 '>
+    <ol className='items-center justify-center flex flex-row sm:flex-col gap-3 sm:gap-6'>
+      <li className='flex sm:w-full justify-start gap-4 items-center text-blue-600 dark:text-blue-500 '>
         <span
           className={`flex items-center justify-center w-8 h-8 border rounded-full shrink-0 ${
             active === FIRST.NUMBER
@@ -24,7 +24,7 @@ export const Stepper = ({active}) => {
           <p className='font-medium text-sm text-white'>{FIRST.TEXT}</p>
         </span>
       </li>
-      <li className='flex w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
+      <li className='flex sm:w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
         <span
           className={`flex items-center justify-center w-8 h-8 border rounded-full shrink-0 ${
             active === SECOND.NUMBER
@@ -41,7 +41,7 @@ export const Stepper = ({active}) => {
           <p className='font-medium text-sm text-white'>{SECOND.TEXT}</p>
         </span>
       </li>
-      <li className='flex w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
+      <li className='flex sm:w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
         <span
           className={`flex items-center justify-center w-8 h-8 border rounded-full shrink-0 ${
             active === THIRD.NUMBER
@@ -58,7 +58,7 @@ export const Stepper = ({active}) => {
           <p className='font-medium text-sm text-white'>{THIRD.TEXT}</p>
         </span>
       </li>
-      <li className='flex w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
+      <li className='flex sm:w-full justify-start gap-4 items-center text-gray-500 dark:text-gray-400 '>
         <span
           className={`flex items-center justify-center w-8 h-8 border rounded-full shrink-0 ${
             active === FOURTH.NUMBER
