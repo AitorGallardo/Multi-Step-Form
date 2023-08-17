@@ -55,11 +55,11 @@ export const InfoPage = () => {
     >
       <form className='flex flex-col gap-6' onSubmit={handleSubmit}>
         <fieldset className='flex flex-col gap-2'>
-          <label className='input__label text-xs text-marineBlue' htmlFor={'name'}>
+          <label className='input__label text-sm font-normal text-marineBlue' htmlFor={'name'}>
             {FIRST_FORM_LABELS.NAME}
           </label>
           <input
-            className={`border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
+            className={`border py-3 px-4 border-solid border-lightGray placeholder:font-medium font-medium text-marineBlue placeholder:text-coolGray rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
             ${
               nameValidation?.length > 0 && formSubmitted
                 ? 'border-strawberryRed'
@@ -68,19 +68,20 @@ export const InfoPage = () => {
             type='text'
             id='name'
             name='name'
+            placeholder='e.g. Stephen King'
             value={name}
             onChange={onInputChange}
           />
           {nameValidation?.length > 0 && formSubmitted && (
-            <span className='text-xs text-strawberryRed'>{nameValidation}</span>
+            <span className='text-xs font-medium text-strawberryRed'>{nameValidation}</span>
           )}
         </fieldset>
         <fieldset className='flex flex-col gap-2'>
-          <label className='input__label text-xs text-marineBlue' htmlFor={'email'}>
+          <label className='input__label text-sm font-normal text-marineBlue' htmlFor={'email'}>
           {FIRST_FORM_LABELS.EMAIL}
           </label>
           <input
-            className={`border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
+            className={`border py-3 px-4 border-solid border-lightGray placeholder:font-medium font-medium text-marineBlue placeholder:text-coolGray rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
             ${
               emailValidation?.length > 0 && formSubmitted
                 ? 'border-strawberryRed'
@@ -89,21 +90,22 @@ export const InfoPage = () => {
             type='email'
             id='email'
             name='email'
+            placeholder='e.g. stephenking@lorem.com'
             value={email}
             onChange={onInputChange}
           />
           {emailValidation?.length > 0 && formSubmitted && (
-            <span className='text-xs text-strawberryRed'>
+            <span className='text-xs font-medium text-strawberryRed'>
               {emailValidation}
             </span>
           )}
         </fieldset>
         <fieldset className='flex flex-col gap-2'>
-          <label className='input__label text-xs text-marineBlue' htmlFor={'phone'}>
+          <label className='input__label text-sm font-normal text-marineBlue' htmlFor={'phone'}>
           {FIRST_FORM_LABELS.PHONE}
           </label>
           <input
-            className={`border py-1 px-2 border-solid rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
+            className={`border py-3 px-4 border-solid border-lightGray placeholder:font-medium placeholder:text-coolGray font-medium text-marineBlue rounded-lg outline-0 hover:border-purpishBlue focus:border-purpishBlue cursor-pointer 
             ${
               phoneValidation?.length > 0 && formSubmitted
                 ? 'border-strawberryRed'
@@ -112,11 +114,12 @@ export const InfoPage = () => {
             type='text'
             id='phone'
             name='phone'
+            placeholder='+34 68581968'
             value={phone}
             onChange={onInputChange}
           />
           {phoneValidation?.length > 0 && formSubmitted && (
-            <span className='text-xs text-strawberryRed'>
+            <span className='text-xs font-medium text-strawberryRed'>
               {phoneValidation}
             </span>
           )}

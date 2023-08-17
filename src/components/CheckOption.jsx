@@ -22,7 +22,7 @@ export default function CheckOption({title, description, price,time,selected=fal
       />
       <div
         htmlFor='bordered-checkbox-1'
-        className='w-full py-3 ml-2 text-sm'
+        className='w-full py-4 ml-2 text-sm'
       >
         <p className="text-base text-marineBlue font-medium">{title}</p>
         <p className="text-xs text-coolGray  font-normal">{description}</p>

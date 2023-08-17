@@ -77,7 +77,7 @@ export const SummaryPage = () => {
     >
       <section className='flex flex-col'>
         <div className='resume p-4 pb-0 bg-alabaster rounded-md'>
-          <div className='resume__plan pb-4 flex justify-between items-center border-b border-lightGray'>
+          <div className='resume__plan pb-5 flex justify-between items-center border-b border-lightGray'>
             <div className='flex flex-col'>
               <div className='resume__plan__title text-marineBlue font-medium'>
                 {selectedPlan} (
