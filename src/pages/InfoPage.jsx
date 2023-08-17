@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFirstFormData, setFirstStepCompleted } from '../store/form';
 import { useNavigateForms } from '../hooks/useNavigateForms';
-
+import { toast } from 'sonner'
 
 
 const { INFO } = FORMS;
@@ -34,11 +34,15 @@ export const InfoPage = () => {
     e.preventDefault();
     setFormSubmitted(true);
     dispatch(setFirstStepCompleted(false));
-    if (!isFormValid) return;
+    if (!isFormValid){
+      toast.error('Ups! Form has some error!')
+      return;
+    } 
 
     console.log('Form is Valid==> Dispatching data');
 
     dispatch(setFirstFormData({formState,isFormValid}));
+    toast.success('Information correctly submitted!')
     console.log('First form submitted',formState);
 
     goNext()
