@@ -32,15 +32,15 @@ My solution for the [Multi-step form challenge on Frontend Mentor](https://www.f
 <table>
         <tr>
             <td>
-                <img src="./src/assets/screenshot-mobile.png"
+                <img src="./assets/screenshot-mobile.png"
                     alt="Desktop site" width="100%" title="Desktop site"  />
             </td>
 		        <td>
-                <img src="./src/assets/screenshot-full-dark.png"
+                <img src="./assets/screenshot-full-dark.png"
                     alt="Mobile site" width="100%" title="Mobile site"/>
             </td>
             <td>
-                <img src="./src/assets/screenshot-full-light-active.png"
+                <img src="./assets/screenshot-full-light-active.png"
                     alt="Active site" width="100%" title="Active site"/>
             </td>
             </tr>
