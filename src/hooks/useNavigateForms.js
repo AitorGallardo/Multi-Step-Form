@@ -9,7 +9,6 @@ export const useNavigateForms = ({backNavigation = '', nextNavigation = ''}) => 
         });
       };
       const goNext = () => {
-        console.log('next',nextNavigation);
         navigate(nextNavigation, {
           replace: true,
         });

@@ -10,17 +10,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setThirdFormData } from '../store/form';
 import CheckOption from '../components/CheckOption';
 import { useNavigateForms } from '../hooks/useNavigateForms';
+import { toast } from 'sonner';
+import { useNavigationToast } from '../hooks/useNavigationToast';
 
 const { ADDONS } = FORMS;
 const { ONLINE, STORAGE, CUSTOM } = ADDONS_OPTIONS;
 
+
+
 export const AddonsPage = () => {
   const backNavigation = '/secondStep',
-    nextNavigation = '/fourthStep';
+  nextNavigation = '/fourthStep',
+  toastNavigation = '/thirdStep',
+  textDescription = 'You did not select any addon',
+  textButton = 'Select!';
   const { goBack, goNext } = useNavigateForms({
     backNavigation,
     nextNavigation,
   });
+
+const {createToast} = useNavigationToast({navigateTo:toastNavigation, textDescription, textButton});
 
   const dispatch = useDispatch();
   const { billingPlan, addons } = useSelector((state) => state.form);
@@ -35,6 +44,12 @@ export const AddonsPage = () => {
       addons = removeAddon(addon);
     }
     dispatch(setThirdFormData({ addons }));
+  };
+  const handleGoNext = () => {
+    if(addons.length === 0){
+      createToast()
+    }
+    goNext();
   };
   const addAddon = (newAddon) => {
     let newAddons = [...selectedAddons, newAddon];
@@ -51,7 +66,7 @@ export const AddonsPage = () => {
     showBack: true,
     showNext: true,
     onClickBack: goBack,
-    onClickNext: goNext,
+    onClickNext: handleGoNext,
   };
 
   return (
@@ -105,15 +120,6 @@ export const AddonsPage = () => {
           }
         />
       </section>
-      {/* <footer className='flex justify-between'>
-        <button onClick={goBack} className='w-fit self-end text-coolGray hover:text-marineBlue font-medium rounded-lg text-sm px-5 py-2.5'>
-          {BUTTONS_TEXT.GO_BACK}
-        </button>
-
-        <button onClick={goNext}  className='w-fit self-end text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5'>
-          {BUTTONS_TEXT.NEXT_STEP}
-        </button>
-      </footer> */}
     </FormLayout>
   );
 };

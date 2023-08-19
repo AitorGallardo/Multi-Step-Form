@@ -42,8 +42,8 @@ export const InfoPage = () => {
     console.log('Form is Valid==> Dispatching data');
 
     dispatch(setFirstFormData({formState,isFormValid}));
-    toast.success('Information correctly submitted!')
-    console.log('First form submitted',formState);
+    toast.success('Personal info correctly submitted!',{duration: 1500})
+    console.log('Personal info correctly submitted!',formState);
 
     goNext()
   };
