@@ -24,7 +24,7 @@ export const BILLING_PLANS = {
 
 export const PLAN_BILLING_CARD_ICON = {
   SIZE: 40,
-  ARCADE:'src/assets/images/icon-arcade.svg',
+  ARCADE:'./assets/images/icon-arcade.svg',
   ADVANCED: 'src/assets/images/icon-advanced.svg',
   PRO: 'src/assets/images/icon-pro.svg',
 }
