@@ -118,7 +118,7 @@ export const InfoPage = () => {
             type='text'
             id='phone'
             name='phone'
-            placeholder='+34 68581968'
+            placeholder='+34 68682151'
             value={phone}
             onChange={onInputChange}
           />

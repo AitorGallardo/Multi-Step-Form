@@ -2,7 +2,7 @@
 
 My solution for the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ) using _React_.
 
-- [Live Site](https://rest-countries-api-gmaitor.vercel.app/)
+- [Live Site](https://multi-step-form-gmaitor.vercel.app/)
 
 ## Table of contents
 
@@ -10,7 +10,9 @@ My solution for the [Multi-step form challenge on Frontend Mentor](https://www.f
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
+- [My process](#my-process)
   - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 - [Author](#author)
 
 ## Overview
@@ -32,15 +34,15 @@ My solution for the [Multi-step form challenge on Frontend Mentor](https://www.f
 <table>
         <tr>
             <td>
-                <img src="./assets/screenshot-mobile.png"
+                <img src="src/assets/screenshot-mobile.png"
                     alt="Desktop site" width="100%" title="Desktop site"  />
             </td>
 		        <td>
-                <img src="./assets/screenshot-full-dark.png"
+                <img src="src/assets/screenshot-full.png"
                     alt="Mobile site" width="100%" title="Mobile site"/>
             </td>
             <td>
-                <img src="./assets/screenshot-full-light-active.png"
+                <img src="src/assets/screenshot-full-active.png"
                     alt="Active site" width="100%" title="Active site"/>
             </td>
             </tr>
@@ -48,9 +50,10 @@ My solution for the [Multi-step form challenge on Frontend Mentor](https://www.f
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [https://rest-countries-api-gmaitor.vercel.app/](https://rest-countries-api-gmaitor.vercel.app/)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/multi-step-form-tailwindreactredux-BK-m2atIAj)
+- Live Site URL: [https://multi-step-form-gmaitor.vercel.app/](https://multi-step-form-gmaitor.vercel.app/)
 
+## My process
 
 ### Built with
 
@@ -61,6 +64,9 @@ My solution for the [Multi-step form challenge on Frontend Mentor](https://www.f
 - [React Router](https://reactrouter.com/en/main) - Client Side Routing Library
 - [Redux Toolkit](https://redux-toolkit.js.org/) - State Management Library
 
+### What I learned
+
+This challenge has helped me to realise how vite with react is building assets. For images, if you are using them as _src/assets/images/*_ you need to import them, otherwise they wont be taken into dist folder, other work around is to add the images to the public folders so they will be added to de _/dist_ folder anyway. 
 
 ## Author
 
