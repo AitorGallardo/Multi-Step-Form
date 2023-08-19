@@ -13,7 +13,7 @@ export const FormLayout = ({
   return (
     <main className='flex h-screen sm:justify-center sm:items-center bg-magnolia'>
       <article className='flex sm:flex-row flex-col shadow-lg sm:rounded-xl sm:p-3 lg:w-9/12 2xl:w-6/12 sm:bg-white sm:min-h-[600px] sm:max-h-[600px] bg-magnolia relative w-full'>
-        <div className="sidePanel basis-1/3 sm:bg-[url('/bg-sidebar-desktop.svg')] sm:rounded-md sm:bg-bottom bg-[url('/bg-sidebar-mobile.svg')] bg-cover p-10 bg-right-bottom">
+        <div className="sidePanel sm:basis-1/4 2xl:basis-1/3 sm:bg-[url('/bg-sidebar-desktop.svg')] sm:rounded-md sm:bg-bottom bg-[url('/bg-sidebar-mobile.svg')] bg-cover p-10 bg-right-bottom">
           <Stepper active={activeNumber} />
         </div>
         <section className='flex grow flex-col shadow-lg w-11/12 sm:w-3/6 sm:shadow-none sm:static sm:translate-x-0 justify-between sm:px-24 px-8 pt-9 pb-4  bg-white absolute top-28 left-1/2 -translate-x-1/2 rounded-xl'>
