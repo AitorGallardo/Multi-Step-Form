@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSecondFormData } from '../store/form';
 import { useNavigateForms } from '../hooks/useNavigateForms';
 
+import ArcadeIcon from '../assets/images/icon-arcade.svg';
+
 const { PLAN } = FORMS;
 
 export const PlanPage = () => {
@@ -63,7 +65,7 @@ export const PlanPage = () => {
           title={SUBSCRIPTION_TIERS.ARCADE.VALUE}
           price={billingType === BILLING_PLANS.MONTHLY ? SUBSCRIPTION_TIERS.ARCADE.PRICE_MONTHLY : SUBSCRIPTION_TIERS.ARCADE.PRICE_YEARLY}
           timeType={billingType}
-          iconImg={PLAN_BILLING_CARD_ICON.ARCADE}
+          iconImg={ArcadeIcon}
           selected={selectedPlan === SUBSCRIPTION_TIERS.ARCADE.VALUE}
           onSelect={() => handleSelectedPlan(SUBSCRIPTION_TIERS.ARCADE.VALUE)}
         />

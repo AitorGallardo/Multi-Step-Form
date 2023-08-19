@@ -1,3 +1,9 @@
+import ArcadeIcon from '../assets/images/icon-arcade.svg';
+import AdvancedIcon from '../assets/images/icon-advanced.svg';
+import ProIcon from '../assets/images/icon-pro.svg';
+import ThankYouIcon from '../assets/images/icon-thank-you.svg';
+
+
 export const INIT_FIRST_FORM = {
   name: '',
   email: '',
@@ -24,10 +30,10 @@ export const BILLING_PLANS = {
 
 export const PLAN_BILLING_CARD_ICON = {
   SIZE: 40,
-  ARCADE:'./assets/images/icon-arcade.svg',
-  ADVANCED: 'src/assets/images/icon-advanced.svg',
-  PRO: 'src/assets/images/icon-pro.svg',
-}
+  ARCADE: ArcadeIcon,
+  ADVANCED: AdvancedIcon,
+  PRO: ProIcon,
+};
 
 export const SUBSCRIPTION_TIERS = {
   ARCADE: {
@@ -119,10 +125,10 @@ export const FORMS = {
 };
 
 export const SUCCESSFUL_FORM = {
-    IMG: {
-        SRC: 'src/assets/images/icon-thank-you.svg',
-        ALT: 'Thank You Icon',
-    },
+  IMG: {
+    SRC: ThankYouIcon,
+    ALT: 'Thank You Icon',
+  },
   TITLE: 'Thank you!',
   DESCRIPTION:
     'Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loregaming.com',
