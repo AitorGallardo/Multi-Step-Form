@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { BillingCard } from '../components/BillingCard';
 import { ToggleIcon } from '../components/ToggleIcon';
 import {
-  BUTTONS_TEXT,
   FORMS,
   SUBSCRIPTION_TIERS,
   BILLING_PLANS,
